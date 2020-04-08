@@ -30,6 +30,19 @@ const isNumber = function (num) {
     return num !== null && !isNaN(num);
 };
 
+/**
+ *
+ * @param url String | Object - The URL to request, either a String or a Object that return by url.parse.
+ * @param opts Object - Optional
+         method String - Request method, defaults to GET. Could be GET, POST, DELETE or PUT.
+         data String | Buffer | Readable - Manually set the content of payload.
+         headers Object - Request headers.
+         timeout Number - Request timeout in milliseconds. Defaults to 3000. When timeout happen, will return RequestTimeout.
+         agent http.Agent - HTTP/HTTPS Agent object. Set false if you does not use agent.
+         beforeRequest Function - Before request hook, you can change every thing here.
+         compression Boolean - Enable compression support. Tell server side responses compressed data
+ * @returns {Promise<unknown>}
+ */
 exports.request = function (url, opts) {
     opts || (opts = {});
 
@@ -166,7 +179,12 @@ exports.request = function (url, opts) {
     })
 };
 
-
+/**
+ *
+ * @param response Response - the Client response. Don't setEncoding() for the response
+ * @param encoding String - Optional.
+ * @returns {Promise<unknown>}
+ */
 exports.read = function (response, encoding) {
     let readable = response;
 
