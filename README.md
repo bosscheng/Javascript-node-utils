@@ -1,3 +1,12 @@
 # Javascript-node-utils
 
-init 
+## methods
+
+###  copy-dir
+
+### remove-dir
+
+
+### request
+
+### supportAsyncFunctions
