@@ -1,6 +1,6 @@
 /**
  * Date:2020/4/23
- * Desc:
+ * Desc: 获取本机ip地址。
  */
 const os = require('os');
 
